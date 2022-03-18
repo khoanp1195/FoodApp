@@ -1,6 +1,8 @@
 package com.example.foodappp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,14 +14,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.foodappp.R;
+import com.example.foodappp.activities.FoodDetailActivity;
 import com.example.foodappp.models.PopularModel;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHolder> {
 
-    private Context context;
-    private List<PopularModel> list;
+    Context context;
+  List<PopularModel> list;
 
     public PopularAdapter(Context context, List<PopularModel> list) {
         this.context = context;
@@ -37,6 +41,17 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
         Glide.with(context).load(list.get(position).getImg_url()).into(holder.imageView);
         holder.foodname.setText(list.get(position).getName());
       //  holder.foodprice.setText(list.get(position).getPrice());
+
+
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, FoodDetailActivity.class);
+                intent.putExtra("detail ", list.get(holder.getAdapterPosition()));
+                context.startActivity(intent);
+            }
+        });
 
 
     }

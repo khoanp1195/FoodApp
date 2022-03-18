@@ -1,6 +1,8 @@
 package com.example.foodappp.models;
 
-public class HomeViewModel {
+import java.io.Serializable;
+
+public class HomeViewModel implements Serializable {
     String img_url;
     String name;
     String timing;

@@ -1,6 +1,8 @@
 package com.example.foodappp.models;
 
-public class PopularModel {
+import java.io.Serializable;
+
+public class PopularModel implements Serializable {
     String name;
     int price;
     String img_url;

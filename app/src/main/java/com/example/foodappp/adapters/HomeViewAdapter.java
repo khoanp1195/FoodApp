@@ -1,6 +1,7 @@
 package com.example.foodappp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.foodappp.R;
+import com.example.foodappp.activities.FoodDetailActivity;
 import com.example.foodappp.models.HomeViewModel;
 
 import java.util.List;
@@ -43,6 +45,17 @@ public class HomeViewAdapter extends RecyclerView.Adapter<HomeViewAdapter.ViewHo
         holder.timing.setText(homeViewModelList.get(holder.getAdapterPosition()).getTiming());
         holder.rating.setText(homeViewModelList.get(holder.getAdapterPosition()).getRating());
         holder.price.setText(homeViewModelList.get(holder.getAdapterPosition()).getPrice());
+
+
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, FoodDetailActivity.class);
+                intent.putExtra("detail ", homeViewModelList.get(holder.getAdapterPosition()));
+                context.startActivity(intent);
+            }
+        });
 
 
 

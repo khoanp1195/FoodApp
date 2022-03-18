@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodAppp">
         <activity
+            android:name=".activities.FoodDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.ViewAllActivity"
             android:exported="false" />
         <activity
