@@ -17,10 +17,12 @@ import com.example.foodappp.R;
 import com.example.foodappp.adapters.DailyMealAdapter;
 import com.example.foodappp.adapters.HomeHorAdapter;
 import com.example.foodappp.adapters.HomeViewAdapter;
+import com.example.foodappp.adapters.PopularAdapter;
 import com.example.foodappp.databinding.FragmentHomeBinding;
 import com.example.foodappp.models.DailyMealModel;
 import com.example.foodappp.models.HomeHorModel;
 import com.example.foodappp.models.HomeViewModel;
+import com.example.foodappp.models.PopularModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -36,10 +38,12 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
 
-    RecyclerView homeHorizontalRec,homeVerticalRec;
+    RecyclerView homeHorizontalRec,homeVerticalRec,popularRec;
 
 
 
+    List<PopularModel> popularModelList;
+    PopularAdapter popularAdapter;
 
 
     List<HomeViewModel> homeViewModelList;
@@ -74,6 +78,9 @@ public class HomeFragment extends Fragment {
         storageReference = FirebaseStorage.getInstance().getReference();
 
 
+        popularRec = root.findViewById(R.id.popular_view_rec);
+        popularModelList = new ArrayList<>();
+        popularRec.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL, false));
 
 
         homeVerticalRec = root.findViewById(R.id.home_view_rec);
@@ -115,6 +122,38 @@ public class HomeFragment extends Fragment {
                         }
                     }
                 });
+
+
+
+        //Home Category
+        popularRec.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,false));
+        popularModelList = new ArrayList<>();
+        popularAdapter = new PopularAdapter(getActivity(), popularModelList);
+        popularRec.setAdapter(popularAdapter);
+
+
+
+        db.collection("popular")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+
+                                PopularModel popularModel = document.toObject(PopularModel.class);
+
+                                popularModelList.add(popularModel);
+                                popularAdapter.notifyDataSetChanged();
+
+                            }
+                        } else {
+                            Toast.makeText(getActivity(),"Error"+task.getException(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+                });
+
 
 
 
