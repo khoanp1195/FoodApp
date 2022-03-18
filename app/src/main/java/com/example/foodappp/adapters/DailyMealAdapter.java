@@ -1,6 +1,7 @@
 package com.example.foodappp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.foodappp.R;
+import com.example.foodappp.activities.ViewAllActivity;
 import com.example.foodappp.models.DailyMealModel;
 
 import java.util.List;
@@ -40,6 +42,17 @@ public class DailyMealAdapter extends RecyclerView.Adapter<DailyMealAdapter.View
         holder.name.setText(dailyMealModelList.get(holder.getAdapterPosition()).getName());
         holder.description.setText(dailyMealModelList.get(holder.getAdapterPosition()).getDescription());
         holder.discount.setText(dailyMealModelList.get(holder.getAdapterPosition()).getDiscount());
+
+
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, ViewAllActivity.class);
+                intent.putExtra("type",dailyMealModelList.get(holder.getAdapterPosition()).getType());
+                context.startActivity(intent);
+            }
+        });
 
     }
 

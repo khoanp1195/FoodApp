@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.foodappp.R;
+import com.example.foodappp.activities.BestSellerDetailActivity;
 import com.example.foodappp.activities.FoodDetailActivity;
 import com.example.foodappp.models.HomeViewModel;
 
@@ -51,8 +52,8 @@ public class HomeViewAdapter extends RecyclerView.Adapter<HomeViewAdapter.ViewHo
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, FoodDetailActivity.class);
-                intent.putExtra("detail ", homeViewModelList.get(holder.getAdapterPosition()));
+                Intent intent = new Intent(context, BestSellerDetailActivity.class);
+                intent.putExtra("detail", homeViewModelList.get(holder.getAdapterPosition()));
                 context.startActivity(intent);
             }
         });

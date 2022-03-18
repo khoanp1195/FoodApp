@@ -5,15 +5,17 @@ public class DailyMealModel {
     String description;
     String name;
     String discount;
+    String type;
 
     public DailyMealModel() {
     }
 
-    public DailyMealModel(String img_url, String description, String name, String discount) {
+    public DailyMealModel(String img_url, String description, String name, String discount, String type) {
         this.img_url = img_url;
         this.description = description;
         this.name = name;
         this.discount = discount;
+        this.type = type;
     }
 
     public String getImg_url() {
@@ -49,6 +51,15 @@ public class DailyMealModel {
 
     public DailyMealModel setDiscount(String discount) {
         this.discount = discount;
+        return this;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public DailyMealModel setType(String type) {
+        this.type = type;
         return this;
     }
 }

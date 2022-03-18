@@ -90,5 +90,23 @@ public class ViewAllActivity extends AppCompatActivity {
         }
 
 
+        //getting pizza
+        if(type != null && type.equalsIgnoreCase("dinner")){
+            firestore.collection("AllProducts").whereEqualTo("type","dinner").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                    for (DocumentSnapshot documentSnapshot:task.getResult().getDocuments()){
+                        ViewAllModel viewAllModel = documentSnapshot.toObject(ViewAllModel.class);
+                        viewAllModelList.add(viewAllModel);
+                        viewAllAdapter.notifyDataSetChanged();
+                        recyclerView.setVisibility(View.VISIBLE);
+
+                    }
+                }
+            });
+        }
+
+
+
     }
 }
