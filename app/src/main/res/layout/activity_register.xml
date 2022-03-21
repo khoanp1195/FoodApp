@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/register_layout"
     tools:context=".RegisterActivity">
 
 
@@ -50,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#CCCCCC"
@@ -67,7 +68,7 @@
 
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/edt_email"
         android:layout_width="0dp"
         android:layout_marginTop="30dp"
         android:layout_height="wrap_content"
@@ -79,11 +80,11 @@
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/editName"
         app:layout_constraintWidth_percent=".8" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/edt_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -91,11 +92,13 @@
         android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
         android:drawablePadding="13dp"
         android:textColor="@color/white"
+        android:inputType="textPassword"
+        app:passwordToggleEnabled="true"
         android:hint="@string/password"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/edt_email"
         app:layout_constraintWidth_percent=".8" />
 
 
@@ -113,7 +116,7 @@
         app:layout_constraintEnd_toEndOf="parent"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
+        app:layout_constraintTop_toBottomOf="@+id/edt_password"
         app:layout_constraintWidth_percent=".8"
         app:layout_constraintVertical_bias="0.6"
         />
@@ -134,6 +137,7 @@
         />
 
     <TextView
+        android:id="@+id/signin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign In"
