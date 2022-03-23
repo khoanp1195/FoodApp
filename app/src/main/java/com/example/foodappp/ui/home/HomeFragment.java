@@ -1,18 +1,24 @@
 package com.example.foodappp.ui.home;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.foodappp.Profile;
 import com.example.foodappp.R;
 import com.example.foodappp.adapters.DailyMealAdapter;
 import com.example.foodappp.adapters.HomeHorAdapter;
@@ -24,17 +30,26 @@ import com.example.foodappp.models.HomeHorModel;
 import com.example.foodappp.models.HomeViewModel;
 import com.example.foodappp.models.PopularModel;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeFragment extends Fragment {
 
@@ -53,6 +68,11 @@ public class HomeFragment extends Fragment {
 
     List<HomeHorModel> homeHorModels;
     HomeHorAdapter homeHorAdapter;
+
+
+    CircleImageView profileImage;
+
+    TextView fullname;
 
 
 
@@ -77,10 +97,23 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
 
+        fAuth = FirebaseAuth.getInstance();
+
 
         db= FirebaseFirestore.getInstance();
         fStore = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
+
+         profileImage = root.findViewById(R.id.profileImage);
+         profileImage.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 Intent intent = new Intent(getContext(), Profile.class);
+                 startActivity(intent);
+             }
+         });
+
+        fullname =root.findViewById(R.id.fullname);
 
 
         popularRec = root.findViewById(R.id.popular_view_rec);
@@ -104,6 +137,34 @@ public class HomeFragment extends Fragment {
         homeHorModels = new ArrayList<>();
         homeHorAdapter = new HomeHorAdapter(getActivity(), homeHorModels);
         homeHorizontalRec.setAdapter(homeHorAdapter);
+
+
+       // Get Image Profile & FullName
+        StorageReference profileRef = storageReference.child("users/" + fAuth.getCurrentUser().getUid() + "/profile.jpg");
+        profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Picasso.get().load(uri).into(profileImage);
+            }
+        });
+
+
+       userId = fAuth.getCurrentUser().getUid();
+        user = fAuth.getCurrentUser();
+        DocumentReference documentReference = fStore.collection("users").document(userId);
+        documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                if (documentSnapshot.exists()) {
+
+                    fullname.setText(documentSnapshot.getString("name"));
+                } else {
+                    Log.d("tag", "onEvent: Document do not exists");
+                }
+            }
+        });
+
+
 
 
 
@@ -194,6 +255,40 @@ public class HomeFragment extends Fragment {
                     }
                 });
 
+
+
+
+
+        /*------------------------------------------Bottom Navigation View----------------------------------------------------------------------*/
+        BottomNavigationView bottomNavigationView= root.findViewById(R.id.bottom_navigation);
+
+        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.Profile:
+                        startActivity(new Intent(getActivity(), Profile.class));
+                        return true;
+                    case R.id.home:
+                        return true;
+
+                        /*
+                    case R.id.about:
+                        startActivity(new Intent(getApplicationContext(), About.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.feedback:
+                        startActivity(new Intent(getApplicationContext(), ReportProblemActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                         */
+                }
+                return false;
+            }
+        });
+        /*------------------------------------------Bottom Navigation View----------------------------------------------------------------------*/
 
 
 

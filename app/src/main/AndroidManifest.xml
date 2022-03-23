@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.foodappp">
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +13,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodAppp">
         <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:label="@string/title_activity_profile"
+            android:theme="@style/Theme.FoodAppp.NoActionBar" />
+        <activity
             android:name=".activities.FoodDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
+            android:name=".EditProfile"
             android:exported="false" />
         <activity
             android:name=".activities.ViewAllActivity"
@@ -22,8 +35,8 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-
-        <activity android:name=".activities.BestSellerDetailActivity"
+        <activity
+            android:name=".activities.BestSellerDetailActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
