@@ -1,4 +1,4 @@
-package com.example.foodappp;
+package com.example.foodappp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,9 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
-import android.window.SplashScreen;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.example.foodappp.R;
+import com.example.foodappp.onboarding.OnBoardingActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
     private static int SPLASH_SCREEN = 5300;
@@ -35,7 +36,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreenActivity.this,WelcomeActivity.class);
+                Intent intent = new Intent(SplashScreenActivity.this, OnBoardingActivity.class);
                 startActivity(intent);
                 finish();
             }

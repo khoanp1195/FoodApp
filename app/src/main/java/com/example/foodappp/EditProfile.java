@@ -16,6 +16,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.foodappp.activities.Profile;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -100,7 +101,7 @@ public class EditProfile extends AppCompatActivity {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 Toast.makeText(EditProfile.this, "Profile Updated", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(),Profile.class));
+                                startActivity(new Intent(getApplicationContext(), Profile.class));
                                 finish();
                             }
                         });

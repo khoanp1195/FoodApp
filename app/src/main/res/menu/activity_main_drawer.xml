@@ -25,5 +25,11 @@
             android:id="@+id/nav_my_cart"
             android:icon="@drawable/cart_menu"
             android:title="@string/my_cart" />
+
+
+        <item
+            android:id="@+id/settingFragment"
+            android:icon="@drawable/ic_baseline_settings_24"
+            android:title="@string/setting" />
     </group>
 </menu>

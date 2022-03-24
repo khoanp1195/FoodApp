@@ -1,4 +1,4 @@
-package com.example.foodappp;
+package com.example.foodappp.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.foodappp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -127,7 +128,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     Log.d(TAG, "Thất Bại: " + e.toString());
                                 }
                             });
-                            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
 
                         }else {
                             Toast.makeText(RegisterActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();

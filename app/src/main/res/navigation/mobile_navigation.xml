@@ -27,4 +27,9 @@
         android:name="com.example.foodappp.MyCartFragment"
         android:label="@string/my_cart"
         tools:layout="@layout/fragment_my_cart" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.foodappp.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
 </navigation>

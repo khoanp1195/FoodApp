@@ -32,6 +32,7 @@ android {
 }
 
 dependencies {
+    implementation "androidx.viewpager:viewpager:1.0.0"
 
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
@@ -67,11 +68,21 @@ dependencies {
     //Circel ImageView
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
+    //smarttablayout
+    implementation 'com.ogaclejapan.smarttablayout:library:1.2.1@aar'
+
+
+
+
+    implementation 'com.pranavpandey.android:dynamic-toasts:3.2.0'
+
 
     implementation 'com.squareup.picasso:picasso:2.71828'
 
 
-    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.google.android.material:material:1.5.0'
+
+    implementation 'com.google.android.material:material:1.6.0-alpha03'
 
 
 

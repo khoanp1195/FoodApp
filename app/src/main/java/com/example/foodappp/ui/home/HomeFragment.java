@@ -14,18 +14,16 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.foodappp.Profile;
+import com.example.foodappp.FavoriteActivity;
+import com.example.foodappp.SettingFragment;
+import com.example.foodappp.activities.Profile;
 import com.example.foodappp.R;
-import com.example.foodappp.adapters.DailyMealAdapter;
 import com.example.foodappp.adapters.HomeHorAdapter;
 import com.example.foodappp.adapters.HomeViewAdapter;
 import com.example.foodappp.adapters.PopularAdapter;
-import com.example.foodappp.databinding.FragmentHomeBinding;
-import com.example.foodappp.models.DailyMealModel;
 import com.example.foodappp.models.HomeHorModel;
 import com.example.foodappp.models.HomeViewModel;
 import com.example.foodappp.models.PopularModel;
@@ -272,7 +270,12 @@ public class HomeFragment extends Fragment {
                         return true;
                     case R.id.home:
                         return true;
-
+                    case R.id.favorite:
+                        startActivity(new Intent(getActivity(), FavoriteActivity.class));
+                        return true;
+                    case R.id.setting:
+                        startActivity(new Intent(getActivity(), SettingFragment.class));
+                        return true;
                         /*
                     case R.id.about:
                         startActivity(new Intent(getApplicationContext(), About.class));

@@ -6,6 +6,9 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="question_logout">Bạn muốn đăng xuất tài khoản này?</string>
+    <string name="no">Không</string>
+    <string name="yes">Có</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
@@ -13,6 +16,9 @@
     <string name="my_restaurant_app">My Restaurant App</string>
     <string name="hello_explore_your_dream_food">hello explore your dream food</string>
     <string name="register">Register</string>
+    <string name="unlock">Unlock</string>
+    <string name="unlock_failed">Failed to Unlock the app.</string>
+    <string name="confirm_pattern">Confirm your screen lock PIN , Pattern or Password</string>
 
     <string name="full_name">Full name</string>
     <string name="email">Email</string>
@@ -36,4 +42,7 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="setting">Setting</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_activity_favorite">FavoriteActivity</string>
 </resources>

@@ -1,13 +1,12 @@
-package com.example.foodappp;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.foodappp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.foodappp.activities.LoginActivity;
-import com.example.foodappp.activities.RegisterActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.foodappp.R;
 
 public class WelcomeActivity extends AppCompatActivity {
 
