@@ -99,20 +99,22 @@
 
         </LinearLayout>
 
+
     </ScrollView>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         layout_constraintStart_toStartOf="parent"
         android:layout_width="match_parent"
-        android:layout_marginTop="83dp"
-        android:layout_height="50dp"
+        android:layout_height="53dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/purple_500"
-        app:itemBackground="@color/browlow"
+
+        android:background="@drawable/detail_page_cart_button_bg"
+        app:itemBackground="@drawable/detail_page_cart_button_bg"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:menu="@menu/menu_navigation" />
+
 
 </LinearLayout>

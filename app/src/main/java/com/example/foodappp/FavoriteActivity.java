@@ -8,6 +8,7 @@ import com.example.foodappp.Fragment.Food2Fragment;
 import com.example.foodappp.activities.Profile;
 import com.example.foodappp.adapters.ViewPagerAdapter;
 import com.example.foodappp.ui.gallery.DailyMealFragment;
+import com.example.foodappp.ui.gallery.NewFoodFragment;
 import com.example.foodappp.ui.home.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
@@ -25,7 +26,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.foodappp.databinding.ActivityFavoriteBinding;
+
 import com.google.android.material.tabs.TabLayout;
 
 public class FavoriteActivity extends AppCompatActivity {
@@ -44,9 +45,9 @@ public class FavoriteActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         ViewPagerAdapter viewPagerAdapter =  new ViewPagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        viewPagerAdapter.addFragment(new DailyMealFragment(), "Home");
-        viewPagerAdapter.addFragment(new Food1Fragment(), "Food1");
-        viewPagerAdapter.addFragment(new Food2Fragment(), "Food2");
+        viewPagerAdapter.addFragment(new DailyMealFragment(), "Featured");
+        viewPagerAdapter.addFragment(new HomeFragment(), "Popular");
+        viewPagerAdapter.addFragment(new NewFoodFragment(), "New");
         viewPager.setAdapter(viewPagerAdapter);
 
 
