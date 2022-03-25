@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:gravity="center_horizontal"
-    android:background="@drawable/bg"
+    android:background="@drawable/bg6"
 
 
     tools:context=".onboarding.S1Fragment">
@@ -27,7 +27,7 @@
         android:textStyle="bold"
         android:text="Choose your favorite food"
         android:textAlignment="center"
-        android:textColor="@color/textColor"
+        android:textColor="@color/white"
         android:textSize="30sp" />
 
 </LinearLayout>

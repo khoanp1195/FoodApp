@@ -5,8 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg5"
     tools:context=".ui.home.HomeFragment"
-    android:background="@color/text_color_comment"
+
 
     >
 
@@ -21,7 +22,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/bg1"
+
                 android:elevation="3dp"
                 android:padding="5dp">
 

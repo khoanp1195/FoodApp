@@ -25,10 +25,10 @@
             android:layout_height="50dp"
             android:layout_weight="0.5"
 
-            android:fontFamily="@font/mazzardhmediumitalic"
+            android:fontFamily="@font/doan"
             android:text="Skip"
             android:textAlignment="center"
-            android:textColor="@color/textColor"
+            android:textColor="@color/white"
             android:textSize="30sp" />
 
         <TextView
@@ -37,10 +37,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
            
-            android:fontFamily="@font/mazzardhmediumitalic"
+            android:fontFamily="@font/doan"
             android:text="Next"
             android:textAlignment="center"
-            android:textColor="@color/textColor"
+            android:textColor="@color/white"
             android:textSize="30sp" />
     </LinearLayout>
 
@@ -52,6 +52,6 @@
             android:layout_marginBottom="20dp"
             android:layout_centerHorizontal="true"
             app:stl_dividerThickness="0dp"
-            app:stl_indicatorColor="@color/textColor" />
+            android:textColor="@color/white" />
 
     </RelativeLayout>
