@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/drawable-v24/active_dot.xml" value="0.1445" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/drawable-v24/foodapp_background.xml" value="0.1435" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/drawable-v24/ic_add.xml" value="0.1415" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/drawable-v24/ic_arrow.xml" value="0.1415" />
@@ -12,6 +13,7 @@
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/drawable-v24/ic_person.xml" value="0.1415" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/drawable-v24/ic_phone.xml" value="0.1415" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/drawable-v24/ic_shopping.xml" value="0.1415" />
+        <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/drawable-v24/non_active_dot.xml" value="0.1445" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/drawable-v24/selector.xml" value="0.1415" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/drawable/daily_meal_bg.xml" value="0.133" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/drawable/detail_page_bg.xml" value="0.1445" />
@@ -51,8 +53,12 @@
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/layout/daily_meal_item.xml" value="0.25" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/layout/detail_daily_meal_item.xml" value="0.22" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/layout/favourite_fragment.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/layout/featured_fragment.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/layout/featured_hor_item.xml" value="0.2" />
+        <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/layout/featured_ver_item.xml" value="0.5170212765957447" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/layout/fragment_daily_meal_.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/layout/fragment_first.xml" value="0.2" />
+        <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/layout/fragment_first2.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/layout/fragment_food1.xml" value="0.2" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/layout/fragment_food2.xml" value="0.2" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/layout/fragment_food3.xml" value="0.2" />
@@ -74,6 +80,7 @@
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/layout/home_vertical_item.xml" value="0.25" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/layout/item_add.xml" value="0.2" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/layout/item_email.xml" value="0.2" />
+        <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/layout/item_home_slider.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/layout/item_image.xml" value="0.33" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/layout/item_info.xml" value="0.14947916666666666" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/layout/nav_header_main.xml" value="0.20416666666666666" />
@@ -82,7 +89,7 @@
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/layout/profile_page.xml" value="0.2" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/layout/search_bg.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/layout/selector.xml" value="0.2" />
-        <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.33" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/menu/main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/menu/menu_navigation.xml" value="0.2" />
         <entry key="..\:/Users/admin/Desktop/FoodApp/app/src/main/res/mipmap-anydpi-v26/onlineorder.xml" value="0.1415" />

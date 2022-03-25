@@ -3,15 +3,8 @@ package com.example.foodappp.adapters;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.lifecycle.Lifecycle;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
-
-import com.example.foodappp.Fragment.Food1Fragment;
-import com.example.foodappp.Fragment.Food2Fragment;
-import com.example.foodappp.ui.home.HomeFragment;
 
 import java.util.ArrayList;
 
